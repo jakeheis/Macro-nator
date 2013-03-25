@@ -19,17 +19,9 @@ post '/convertify' do
 
   gogo_gadget = false
 
-  lines_ago = 0;
   contents.each_line do |line|
-    puts "LIEN LINE LINE #{line}"
-    if line.include? "//MACRONATOR START"
-      puts "MOOHAHAHAHA"
-      lines_ago = 1;
-      next
-    end
-
-    if lines_ago == 1
-      lines_ago += 1
+    if !gogo_gadget && line.include?("/*")
+      gogo_gadget = true
       next
     end
 
@@ -37,19 +29,12 @@ post '/convertify' do
       break
     end
 
-    if lines_ago == 2
+    if gogo_gadget
         trimmed_contents += line
     elsif line.include? "int main"
         gogo_gadget = true;
     end
   end
-
-  puts "trimmy trim trim trim #{trimmed_contents}"
-
-  # contents.split("\n")
-   # {:key1 => "contents"}.to_json
-   # argarr = trimmed_contents.split("asdf")
-   # puts "O the hero #{argarr[0]}"
 
    trimmed_contents
 end

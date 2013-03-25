@@ -1,17 +1,20 @@
+<div class="well">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+
+<h3>Rules:</h3>
+<ul>
+	<li>You know those '\' (forward slashes) you usually put at the end of a multi-line macro? Don't use them here.</li>
+	<li>No single line macros. Always define on the first line, and put the rest of your macro on the next however many lines.</li>
+</ul>
+<button id="simple-btn" class="btn-primary">Simple Example</button>
+<button id="complex-btn" class="btn-primary">Complex Example</button>
+</div>
 
 <p>Your macro:</p>
-<textarea id="first" rows="10" placeholder="Type your macro here'" style="width:100%">#define QLLazyLoad(class, property) /*
-*/-(class *)property { /*
-*/if (_##property) /*
-*/return _##property; /*
-*/class *newGuy = [[class alloc] init]; /*
-*/_##property = newGuy; /*
-*/return _##property; /*
-*/}</textarea>
+<textarea id="first" rows="10" placeholder="Type your macro here" style="width:100%"></textarea>
 
 <p>Your macro call:</p>
-<input id="second" type="text" value="QLLazyLoad(NSMutableArray, burgers)" style="width:100%"/>
-<!-- <textarea rows="1" id="second" placeholder="Type your macro call here" style="width:30%">QLLazyLoad(NSMutableArray, burgers)</textarea> -->
+<input id="second" type="text" placeholder="Type your macro call here" style="width:100%"/>
 
 <div class="well">
 	<p>Output: </p>
