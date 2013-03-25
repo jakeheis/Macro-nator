@@ -13,7 +13,7 @@ end
 post '/convertify' do
   File.open("processed.c", 'w') { |file| file.write(params[:file]) }
   contents = `gcc -E -CC processed.c`
-  # File.delete("processed.c")
+  File.delete("processed.c")
 
   trimmed_contents = ""
 
