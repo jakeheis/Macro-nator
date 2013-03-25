@@ -1,13 +1,19 @@
-<textarea id="first" placeholder="Type your macro here'">#define QLLazyLoad(class, property) \
+
+<p>Your macro:</p>
+<textarea id="first" rows="10" placeholder="Type your macro here'" style="width:100%">#define QLLazyLoad(class, property) \
 -(class *)property { \
 if (_##property) \
 return _##property; \
 class *newGuy = [[class alloc] init]; \
 _##property = newGuy; \
 return _##property; \
-}</textarea> <br />
+}</textarea>
 
-<textarea id="second" placeholder="Type your macro call here">QLLazyLoad(NSMutableArray, burgers)</textarea>
+<p>Your macro call:</p>
+<input id="second" type="text" value="QLLazyLoad(NSMutableArray, burgers)" style="width:100%"/>
+<!-- <textarea rows="1" id="second" placeholder="Type your macro call here" style="width:30%">QLLazyLoad(NSMutableArray, burgers)</textarea> -->
 
-<p>Output: </p>
-<p id="output"></p>
+<div class="well">
+	<p>Output: </p>
+	<p id="output"></p>
+</div>
