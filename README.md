@@ -1,7 +1,9 @@
 Macro-nator
 =========
 
-![ScreenShot](https://raw.github.com/jakeheis/Macro-nator/master/awesome.png)
+![ScreenShot](https://raw.github.com/jakeheis/Macro-nator/master/simple.png)
+
+![ScreenShot](https://raw.github.com/jakeheis/Macro-nator/master/complex.png)
 
 The Macro-nator makes it easy to write new macros. Type in a macro, some sample values, and see how it all looks preprocessed.
 
