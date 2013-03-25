@@ -1,0 +1,13 @@
+<textarea id="first" placeholder="Type your macro here'">#define QLLazyLoad(class, property) \
+-(class *)property { \
+if (_##property) \
+return _##property; \
+class *newGuy = [[class alloc] init]; \
+_##property = newGuy; \
+return _##property; \
+}</textarea> <br />
+
+<textarea id="second" placeholder="Type your macro call here">QLLazyLoad(NSMutableArray, burgers)</textarea>
+
+<p>Output: </p>
+<p id="output"></p>
